@@ -1,8 +1,12 @@
 package it.polito.tdp.PremierLeague.model;
 
+import java.util.List;
+
 public class Team {
 	Integer teamID;
 	String name;
+	List<Integer> esiti;
+	int punteggio;
 
 	public Team(Integer teamID, String name) {
 		super();
@@ -10,6 +14,14 @@ public class Team {
 		this.name = name;
 	}
 	
+	public Team(Integer teamID, String name, List<Integer> esiti) {
+		super();
+		this.teamID = teamID;
+		this.name = name;
+		this.esiti = esiti;
+		//this.punteggio = punteggio;
+	}
+
 	public Integer getTeamID() {
 		return teamID;
 	}
@@ -53,6 +65,14 @@ public class Team {
 		} else if (!teamID.equals(other.teamID))
 			return false;
 		return true;
+	}
+
+	public List<Integer> getEsiti() {
+		return esiti;
+	}
+
+	public void setEsiti(List<Integer> esiti) {
+		this.esiti = esiti;
 	}
 	
 }
